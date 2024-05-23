@@ -3,7 +3,9 @@
 #define MAX_CHAR_PER_LINE 500
 
 int main()
-{ FILE *fp = fopen("input.txt", "r"); if (fp == NULL)
+{
+  FILE *fp = fopen("input.txt", "r");
+  if (fp == NULL)
   {
     fprintf(stderr, "can't open input.txt\n");
     return 1;
