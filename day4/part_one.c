@@ -25,8 +25,8 @@ int main(int argc, char *argv[])
 
     int *winning_numbers = NULL;
     int count = 0, size = 0;
-    char *save2;
-    char *p = strtok_r(left_part, " ", &save2);
+    char *s;
+    char *p = strtok_r(left_part, " ", &s);
     while(p)
     {
       if (count >= size)
@@ -39,14 +39,13 @@ int main(int argc, char *argv[])
       sscanf(p, "%d", &number);
       winning_numbers[count++] = number;
 
-      p = strtok_r(NULL, " ", &save2);
+      p = strtok_r(NULL, " ", &s);
     }
 
     char * right_part = strtok_r(NULL, "|", &save);
 
     int points = 0;
-    char *save3;
-    char *p2 = strtok_r(right_part, " ", &save3);
+    char *p2 = strtok_r(right_part, " ", &s);
     while(p2)
     {
       int number;
@@ -57,7 +56,7 @@ int main(int argc, char *argv[])
         points = points == 0 ? 1 : points * 2;
       }
 
-      p2 = strtok_r(NULL, " ", &save3);
+      p2 = strtok_r(NULL, " ", &s);
     }
 
     ret += points;
